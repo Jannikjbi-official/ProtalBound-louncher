@@ -1,0 +1,18 @@
+# Portalbound: names, links and texts that only apply to this launcher.
+
+[ejs.app]
+title = "Portalbound Launcher"
+
+[ejs.landing]
+mediaWebsiteURL = "https://portalbound.xyz/"
+mediaStoreURL = "https://store.portalbound.xyz/"
+mediaDiscordURL = "https://discord.gg/xvvq5WQPrm"
+
+[ejs.settings]
+sourceGithubLink = "https://portalbound.xyz/"
+supportLink = "https://discord.gg/xvvq5WQPrm"
+
+[ejs.welcome]
+welcomeHeader = "WELCOME TO PORTALBOUND"
+welcomeDescription = "Portalbound is a new Minecraft Java network. The launcher takes you straight to the server – version, Java and connection are already set up, you don't have to gather any of it yourself. You can already sign in before the portal opens – the play button unlocks automatically at release."
+welcomeDescCTA = "Just a few clicks away from the portal."

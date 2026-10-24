@@ -1,0 +1,29 @@
+{
+    "version": "1.0.0",
+    "rss": "",
+    "portalbound": {
+        "releaseAt": "2027-01-01T13:00:00+01:00"
+    },
+    "servers": [
+        {
+            "id": "portalbound",
+            "name": "Portalbound",
+            "description": "Minecraft Network · Season 01",
+            "icon": "assets/images/portalbound-icon.png",
+            "version": "1.0.0",
+            "address": "play.portalbound.xyz:25565",
+            "minecraftVersion": "26.2",
+            "mainServer": true,
+            "autoconnect": true,
+            "javaOptions": {
+                "supported": ">=25.x",
+                "suggestedMajor": 25,
+                "ram": {
+                    "recommended": 4096,
+                    "minimum": 2048
+                }
+            },
+            "modules": []
+        }
+    ]
+}

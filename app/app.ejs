@@ -1,0 +1,66 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-In6B8teKZQll5heMl9bS7CESTbGvuAt3VVV86BUQBDk='"/>
+    <title><%= lang('app.title') %></title>
+    <script src="./assets/js/scripts/uicore.js"></script>
+    <script src="./assets/js/scripts/uibinder.js"></script>
+    <link type="text/css" rel="stylesheet" href="./assets/css/launcher.css">
+    <style>
+        body {
+            /*background: url('assets/images/backgrounds/<%=bkid%>.jpg') no-repeat center center fixed;*/
+            background-color: #050609;
+            transition: background-image 1s ease;
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAA8AHADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDzGlxShakjTJq0hNjAlO2VOI6QrirUSbkOynKgNTKmRSOmxeKrlsK/QaqA0xhhqsW0LPyelTyWg25Fbeyco3SNVBtFaOPcuaY8fNPDMmVqZAGXnrWdr6GN2nqUilN281ZkwpxTdoI4qHEdyA001MUprLip5SrjVNTQjvUKLmpk44pxEyZTk4p7JTIRhsmp3Za2S7mTbuMCYGagkOWxVoncOKb5Sn61Mpq9kaxj1ZbsosxAgVdkg/cZxUOnyKh2t0q1fXcaQlUxXfTqxjDU64ySRgSsFZhimwEk1JuRiS3WoVfbLx0rzue8zlnFbokmiHWmxAdDU5AdahCBGya1aMee6sK6gVWk6VZeRTxVaTrUSshxGxthcU5MlqgVsGp0OTWUTSRbIAUGqsrkNxVtMFKqTL81bT2M4vUdHcEDBp32jmoAlBXFYWsacxaF2QOKikuXc8mocUhFMLjvMo380wg0BaVgLEcxB5NOkYv0qsqkmtGCEFc1rC70M5WjqUypAyaZnJq5MgFU2HPFEhxfMiCnK2KaaBXPc1L8EgxzSOQzcVVBIHFKrH1rTmMnDW5YI4ppFIGJFOz8tBOwzFFSRjPWhgBSuO5ERQoNPA4qSIAmncHKyEiC55p7XXl8CoLj5TxVYknrT52tgUObVk0twzmotxptFQ22bKKWx//Z');
+            background-size: cover;
+            -webkit-user-select: none;
+        }
+        #main {
+            display: none;
+            height: calc(100% - 22px);
+            background: linear-gradient(to top, rgba(5, 6, 9, 0.85) 0%, rgba(5, 6, 9, 0) 100%);
+            width: 100%;
+            position: absolute;
+            z-index: 10;
+        }
+        #main[overlay] {
+            filter: blur(3px) contrast(0.9) brightness(1.0);
+        }
+    </style>
+</head>
+<body bkid="<%=bkid%>">
+    <%- include('frame') %>
+    <div id="main">
+        <%- include('welcome') %>
+        <%- include('login') %>
+        <%- include('waiting') %>
+        <%- include('loginOptions') %>
+        <%- include('settings') %>
+        <%- include('landing') %>
+    </div>
+    <%- include('overlay') %>
+    <div id="changelogModal" style="display: none;">
+        <div id="changelogCard">
+            <div id="changelogHeader">
+                <img id="changelogLogo" src="assets/images/portalbound-mark.png"/>
+                <div id="changelogHeading">
+                    <span id="changelogEyebrow"></span>
+                    <span id="changelogTitle"></span>
+                </div>
+                <button id="changelogClose">&#10005;</button>
+            </div>
+            <div id="changelogBody"></div>
+            <div id="changelogActions">
+                <button id="changelogDone"></button>
+            </div>
+        </div>
+    </div>
+    <div id="loadingContainer">
+        <div id="loadingContent">
+            <div id="loadSpinnerContainer">
+                <div id="loadSpinnerImage" class="rotating"></div>
+                <img id="loadCenterImage" src="assets/images/portalbound-mark.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

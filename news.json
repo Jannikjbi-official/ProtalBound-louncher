@@ -1,0 +1,47 @@
+{
+    "_help": "Launcher news. Edit this file on GitHub (main branch) and every launcher shows the change within a few minutes. Newest first by date. tag: Launcher, Network, Event, PVP, Update or Store. content is Markdown.",
+    "articles": [
+        {
+            "id": "launcher-1-0-0",
+            "title": "The Portalbound Launcher is here",
+            "date": "2026-10-24T12:00:00+02:00",
+            "tag": "Launcher",
+            "author": "Portalbound",
+            "summary": "One click, one portal – everything you need to play is already set up.",
+            "content": [
+                "The launcher brings everything you need to play: the right Minecraft version, Java and the connection to **play.portalbound.xyz**.",
+                "",
+                "- Sign in with your Microsoft account",
+                "- The play button unlocks by itself when the portal opens",
+                "- New launcher versions install automatically"
+            ],
+            "link": "https://portalbound.xyz/en/launcher"
+        },
+        {
+            "id": "release-date",
+            "title": "Release date is set",
+            "date": "2026-10-23T12:00:00+02:00",
+            "tag": "Network",
+            "author": "Portalbound",
+            "summary": "The portal opens on January 1, 2027 at 1:00 PM (German time).",
+            "content": [
+                "The portal opens on **January 1, 2027 at 1:00 PM** (German time). The countdown runs right here in the launcher and on the website.",
+                "",
+                "Announcements, sneak peeks and events land on our [Discord](https://discord.gg/xvvq5WQPrm) first."
+            ],
+            "link": "https://portalbound.xyz/en"
+        },
+        {
+            "id": "network-up",
+            "title": "The network is up",
+            "date": "2026-10-22T12:00:00+02:00",
+            "tag": "Network",
+            "author": "Portalbound",
+            "summary": "Lobby and PVP run behind one proxy, ranks work everywhere.",
+            "content": [
+                "Lobby and PVP run behind one shared proxy. Ranks apply on every server and you always join into the lobby."
+            ],
+            "link": null
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+# Keep LF everywhere, the helios-core patch must match byte for byte on every build runner.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
+*.icns binary
+*.jar binary
+*.woff2 binary

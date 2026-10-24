@@ -1,0 +1,60 @@
+appId: 'xyz.portalbound.launcher'
+productName: 'Portalbound Launcher'
+artifactName: 'Portalbound-Launcher-setup-${version}.${ext}'
+
+copyright: 'Copyright © 2026 Portalbound. Basiert auf Helios Launcher, Copyright © 2018-2026 Daniel Scalzi.'
+
+asar: true
+compression: 'maximum'
+
+files:
+  - '!{dist,.gitignore,.vscode,.github,docs,patches,scripts,dev-app-update.yml,.nvmrc,eslint.config.mjs,README.md}'
+
+extraResources:
+  - 'libraries'
+
+# Launcher updates come from GitHub releases. The workflow in .github/workflows/build.yml
+# builds and publishes a release whenever a tag like v1.0.0 is pushed.
+publish:
+  provider: 'github'
+  owner: 'Jannikjbi-official'
+  repo: 'ProtalBound-louncher'
+  releaseType: 'release'
+
+# Windows Configuration
+win:
+  target:
+    - target: 'nsis'
+      arch: 'x64'
+
+# Windows Installer Configuration
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  shortcutName: 'Portalbound'
+
+# macOS Configuration
+mac:
+  target:
+    - target: 'dmg'
+      arch:
+        - 'x64'
+        - 'arm64'
+  artifactName: 'Portalbound-Launcher-setup-${version}-${arch}.${ext}'
+  category: 'public.app-category.games'
+
+# Linux Configuration
+linux:
+  target: 'AppImage'
+  maintainer: 'Portalbound'
+  vendor: 'Portalbound'
+  synopsis: 'Launcher für Portalbound'
+  description: 'Launcher für das Minecraft-Netzwerk Portalbound. Minecraft, Java und die Verbindung zu play.portalbound.xyz werden automatisch eingerichtet.'
+  category: 'Game'
+
+
+directories:
+  buildResources: 'build'
+  output: 'dist'
