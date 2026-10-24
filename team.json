@@ -2,22 +2,22 @@
     "_help": "The team page in the launcher. Edit this file on GitHub (main branch) and every launcher shows the change within a few minutes. name = Minecraft name (used for the skin), role = badge text, colors = two hex colors for the card glow, links = optional buttons (https only).",
     "members": [
         {
+            "name": "moxhi_",
+            "role": "Owner · Founder",
+            "description": "Founder of Portalbound – brought the portal to life. Also designed portalbound.xyz.",
+            "colors": ["#E45CFF", "#A77BFF"],
+            "links": [
+                { "label": "mochikotv.com", "url": "https://mochikotv.com" }
+            ]
+        },
+        {
             "name": "Jannikjbi",
-            "role": "Owner",
-            "description": "Founder of Portalbound. Runs the network and the servers behind the portal.",
+            "role": "Co-Owner · Sponsor",
+            "description": "Co-owner and sponsor of Portalbound – funds the network and runs the servers behind the portal.",
             "colors": ["#FF1E0A", "#FF5A1F"],
             "links": [
                 { "label": "Twitch", "url": "https://www.twitch.tv/jannikjbi" },
                 { "label": "Website", "url": "https://www.jannikjbi.de/" }
-            ]
-        },
-        {
-            "name": "moxhi_",
-            "role": "Owner",
-            "description": "Co-owner of Portalbound and the designer behind portalbound.xyz.",
-            "colors": ["#E45CFF", "#A77BFF"],
-            "links": [
-                { "label": "mochikotv.com", "url": "https://mochikotv.com" }
             ]
         }
     ]
