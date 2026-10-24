@@ -236,6 +236,11 @@ function setUpdateBanner(state, info){
     banner.style.display = 'flex'
 }
 
+// Hide the banner. A downloaded update still installs when the launcher closes.
+document.getElementById('updateBannerDismiss').onclick = () => {
+    $('#updateBanner').fadeOut(200)
+}
+
 /* Changelog */
 
 const Changelog = require('./assets/js/changelog')

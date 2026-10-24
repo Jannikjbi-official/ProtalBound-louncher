@@ -80,7 +80,8 @@ ipcMain.on('autoUpdateAction', (event, arg, data) => {
             }
             break
         case 'installUpdateNow':
-            autoUpdater.quitAndInstall()
+            // Install without the setup wizard and start the launcher again afterwards.
+            autoUpdater.quitAndInstall(true, true)
             break
         default:
             console.log('Unknown argument', arg)

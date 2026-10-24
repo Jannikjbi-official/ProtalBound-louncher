@@ -4844,6 +4844,20 @@ input:checked + .toggleSwitchSlider {
     background: #73d99b;
     box-shadow: 0 0 8px #73d99b;
 }
+#updateBannerDismiss {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--pb-border);
+    background: transparent;
+    color: var(--pb-muted);
+    font-size: 10px;
+    cursor: pointer;
+}
+#updateBannerDismiss:hover {
+    color: var(--pb-ink);
+    border-color: var(--pb-border-strong);
+}
 #updateBannerAction {
     padding: 5px 14px;
     border: none;

@@ -2,6 +2,12 @@
 
 All notable changes to the Portalbound Launcher. The launcher shows the section of the installed version under **What's new**, and every GitHub release uses it as its release notes.
 
+## [1.0.1] - 2026-10-24 - Smooth Updates
+
+### Improved
+- **Updates install silently** – after "Restart & update" the launcher installs the new version in the background and starts again by itself, no setup wizard anymore.
+- The update banner can be closed. A downloaded update still installs when you close the launcher.
+
 ## [1.0.0] - 2026-10-24 - The Portal Opens
 
 ### New
