@@ -48,3 +48,25 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run dist -- --publish always
         shell: bash
+
+      # Copies without the version in the name, so portalbound.xyz can always link to
+      # https://github.com/<repo>/releases/latest/download/<name>.
+      - name: Stable download names for the website
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          cd dist
+          for pair in \
+            "Portalbound-Launcher-setup-$VERSION.exe:Portalbound-Launcher-Setup.exe" \
+            "Portalbound-Launcher-setup-$VERSION-arm64.dmg:Portalbound-Launcher-mac-arm64.dmg" \
+            "Portalbound-Launcher-setup-$VERSION-x64.dmg:Portalbound-Launcher-mac-x64.dmg" \
+            "Portalbound-Launcher-setup-$VERSION.AppImage:Portalbound-Launcher.AppImage"; do
+            src="${pair%%:*}"
+            dst="${pair##*:}"
+            if [ -f "$src" ]; then
+              cp "$src" "$dst"
+              gh release upload "v$VERSION" "$dst" --clobber -R "$GITHUB_REPOSITORY"
+            fi
+          done
+        shell: bash
