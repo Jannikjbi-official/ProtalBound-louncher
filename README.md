@@ -6,6 +6,14 @@
 
 Basiert auf [Helios Launcher](https://github.com/dscalzi/HeliosLauncher) von Daniel Scalzi (MIT, siehe `LICENSE.txt`).
 
+<p align="center"><img src="docs/screenshots/launcher.png" width="760" alt="Portalbound Launcher"></p>
+
+**Download:** [Neuestes Release](https://github.com/Jannikjbi-official/ProtalBound-louncher/releases/latest) – Windows `.exe`, macOS `.dmg` (Apple Silicon / Intel), Linux `.AppImage`.
+
+| News | What's new |
+| --- | --- |
+| ![News](docs/screenshots/news.png) | ![What's new](docs/screenshots/whats-new.png) |
+
 ## Was der Launcher macht
 
 * Anmeldung mit Microsoft-Konto (Mojang-Konten gibt es nicht mehr, die Option ist ausgeblendet).
