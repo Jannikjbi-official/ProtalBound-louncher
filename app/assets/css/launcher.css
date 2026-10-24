@@ -5065,3 +5065,216 @@ input:checked + .toggleSwitchSlider {
     line-height: 1.55;
     color: #d9dde0;
 }
+
+/* Team button tooltip (same look as the settings tooltip). */
+#teamMediaContainer {
+    position: relative;
+}
+#teamTooltip {
+    visibility: hidden;
+    opacity: 0;
+    width: 60px;
+    height: 20px;
+    background-color: var(--pb-glass-strong);
+    border: 1px solid var(--pb-border);
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    right: 130%;
+    font-size: 12px;
+    line-height: 20px;
+    transition: visibility 0s linear 0.25s, opacity 0.25s ease;
+}
+#teamMediaButton:hover #teamTooltip,
+#teamMediaButton:focus #teamTooltip {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+#teamSVG,
+#teamMediaButton:hover #teamSVG {
+    fill: #ffffff;
+    height: 16px;
+    width: 18px;
+}
+#teamMediaButton:hover #teamSVG {
+    fill: var(--pb-cyan);
+}
+
+/* Team dialog. */
+#teamModal {
+    position: absolute;
+    z-index: 600;
+    top: 22px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 22px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 6, 9, 0.72);
+    backdrop-filter: blur(6px);
+}
+#teamCard {
+    display: flex;
+    flex-direction: column;
+    width: 720px;
+    max-width: calc(100% - 48px);
+    max-height: calc(100% - 48px);
+    border-radius: 20px;
+    background: var(--pb-glass-strong);
+    border: 1px solid var(--pb-border-strong);
+    box-shadow: 0 0 40px rgba(154, 120, 255, 0.25), 0 24px 60px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+#teamHeader {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 22px 14px;
+    border-bottom: 1px solid var(--pb-border);
+    background: linear-gradient(90deg, rgba(154, 120, 255, 0.14), rgba(86, 217, 231, 0.06));
+}
+#teamHeading {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+#teamEyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--pb-cyan);
+}
+#teamTitle {
+    font-family: 'Teko';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1;
+}
+#teamSubtitle {
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--pb-muted);
+}
+#teamClose {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--pb-border);
+    background: transparent;
+    color: var(--pb-muted);
+    cursor: pointer;
+}
+#teamClose:hover {
+    color: var(--pb-ink);
+    border-color: var(--pb-border-strong);
+}
+#teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 240px));
+    justify-content: center;
+    gap: 14px;
+    padding: 18px 22px;
+    overflow-y: auto;
+    color: var(--pb-muted);
+    font-size: 13px;
+}
+#teamGrid[loading] {
+    min-height: 260px;
+}
+.teamMember {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 16px 18px;
+    border-radius: 16px;
+    background: rgba(17, 19, 24, 0.7);
+    border: 1px solid var(--pb-border);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.teamMember::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--member-a), var(--member-b));
+}
+.teamMember:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--member-b) 60%, transparent);
+    box-shadow: 0 0 26px color-mix(in srgb, var(--member-a) 30%, transparent);
+}
+.teamMemberSkin {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 140px;
+    height: 170px;
+    margin-bottom: 10px;
+    border-radius: 50% 50% 14px 14px;
+    background: radial-gradient(circle at 50% 70%, color-mix(in srgb, var(--member-a) 35%, transparent), transparent 70%);
+}
+.teamMemberSkin img {
+    height: 160px;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.6));
+}
+.teamMemberName {
+    font-family: 'Teko';
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--pb-ink);
+}
+.teamMemberRole {
+    margin-top: 6px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: linear-gradient(90deg, var(--member-a), var(--member-b));
+}
+.teamMemberDescription {
+    margin: 10px 0 0;
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--pb-muted);
+}
+.teamMemberLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+}
+.teamMemberLinks a {
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--pb-border);
+    background: var(--pb-glass);
+    color: var(--pb-ink);
+    font-size: 11px;
+    text-decoration: none;
+}
+.teamMemberLinks a:hover {
+    border-color: var(--member-b);
+}
+#teamFooter {
+    padding: 12px 22px 16px;
+    border-top: 1px solid var(--pb-border);
+    font-size: 12px;
+    color: var(--pb-muted);
+}
+#teamFooter a {
+    color: var(--pb-cyan);
+}

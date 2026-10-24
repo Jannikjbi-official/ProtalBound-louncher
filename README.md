@@ -10,9 +10,9 @@ Basiert auf [Helios Launcher](https://github.com/dscalzi/HeliosLauncher) von Dan
 
 **Download:** [Neuestes Release](https://github.com/Jannikjbi-official/ProtalBound-louncher/releases/latest) – Windows `.exe`, macOS `.dmg` (Apple Silicon / Intel), Linux `.AppImage`.
 
-| News | What's new |
-| --- | --- |
-| ![News](docs/screenshots/news.png) | ![What's new](docs/screenshots/whats-new.png) |
+| News | What's new | Team |
+| --- | --- | --- |
+| ![News](docs/screenshots/news.png) | ![What's new](docs/screenshots/whats-new.png) | ![Team](docs/screenshots/team.png) |
 
 ## Was der Launcher macht
 
@@ -20,7 +20,7 @@ Basiert auf [Helios Launcher](https://github.com/dscalzi/HeliosLauncher) von Dan
 * Installiert Minecraft **26.2** (wie die Server, Paper 26.2) und bei Bedarf **Java 25** automatisch.
 * Startet Vanilla-Minecraft und verbindet direkt mit `play.portalbound.xyz:25565`.
 * Countdown bis zum Release und **automatische Freischaltung** des Spielen-Buttons.
-* News als Karten, Changelog mit „What's new“ nach jedem Update, Auto-Update über GitHub.
+* News als Karten, Team-Seite, Changelog mit „What's new“ nach jedem Update, Auto-Update über GitHub.
 * Server-Status (Spieler online), Links zu Website, Store und Discord.
 * Oberfläche auf Englisch. Eine deutsche Übersetzung liegt in `app/assets/lang/de_DE.toml` – zum Umschalten in `app/assets/js/langloader.js` die Zeile `loadLanguage('de_DE')` aktivieren.
 
@@ -51,6 +51,7 @@ Der Launcher fragt die API anfangs alle 10 Minuten, in den letzten 15 Minuten vo
 Beides lädt der Launcher direkt aus diesem Repository (Branch `main`). Änderungen auf GitHub sind nach ein paar Minuten in jedem Launcher sichtbar – ohne neues Release. Ist GitHub nicht erreichbar, nimmt er die mitgelieferte Kopie.
 
 - **News:** [`news.json`](news.json). Jeder Eintrag hat `id`, `title`, `date`, `tag` (Launcher, Network, Event, PVP, Update, Store), `author`, `summary`, `content` (Markdown, als Liste von Zeilen) und optional `link`. Neueste nach Datum zuerst. Ein neuer Eintrag lässt den Punkt am NEWS-Knopf aufleuchten.
+- **Team:** [`team.json`](team.json). Pro Person `name` (Minecraft-Name, daraus kommt der Skin), `role`, `description`, `colors` (zwei Hex-Farben für die Karte) und optional `links` (nur https). Reihenfolge wie in der Datei.
 - **Server-Infos:** [`app/assets/distribution.json`](app/assets/distribution.json) – Server-Adresse, Minecraft-Version, Java, RAM und `portalbound.releaseAt` (Fallback für die Release-Sperre).
 
 ## Entwicklung

@@ -2,6 +2,11 @@
 
 All notable changes to the Portalbound Launcher. The launcher shows the section of the installed version under **What's new**, and every GitHub release uses it as its release notes.
 
+## [1.1.0] - 2026-10-24 - Meet the Team
+
+### New
+- **Team page** – meet the people behind the portal: skins, roles and links, right from the new team button on the start page.
+
 ## [1.0.1] - 2026-10-24 - Smooth Updates
 
 ### Improved

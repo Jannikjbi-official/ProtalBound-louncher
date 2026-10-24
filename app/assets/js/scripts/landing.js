@@ -328,6 +328,102 @@ function showWhatsNewIfUpdated(){
     }
 }
 
+/* Team */
+
+const TeamFeed = require('./assets/js/teamfeed')
+
+/**
+ * Build one member card. Everything from team.json is set as text, never as HTML.
+ *
+ * @param {Object} member A member from TeamFeed.load().
+ * @returns {HTMLElement}
+ */
+function buildTeamCard(member){
+    const card = document.createElement('div')
+    card.className = 'teamMember'
+    card.style.setProperty('--member-a', member.colors[0])
+    card.style.setProperty('--member-b', member.colors[1])
+
+    const skin = document.createElement('div')
+    skin.className = 'teamMemberSkin'
+    const img = document.createElement('img')
+    img.src = `https://mc-heads.net/body/${encodeURIComponent(member.name)}/right`
+    img.alt = member.name
+    img.onerror = () => { img.src = 'assets/images/portalbound-mark.png' }
+    skin.appendChild(img)
+
+    const name = document.createElement('span')
+    name.className = 'teamMemberName'
+    name.textContent = member.name
+
+    const role = document.createElement('span')
+    role.className = 'teamMemberRole'
+    role.textContent = member.role
+
+    const description = document.createElement('p')
+    description.className = 'teamMemberDescription'
+    description.textContent = member.description
+
+    const links = document.createElement('div')
+    links.className = 'teamMemberLinks'
+    for(const link of member.links){
+        const a = document.createElement('a')
+        a.href = link.url
+        a.textContent = link.label
+        links.appendChild(a)
+    }
+
+    card.append(skin, name, role, description, links)
+    return card
+}
+
+/**
+ * Show the team dialog.
+ */
+async function showTeamModal(){
+    document.getElementById('teamEyebrow').textContent = Lang.queryJS('team.eyebrow')
+    document.getElementById('teamTitle').textContent = Lang.queryJS('team.title')
+    document.getElementById('teamSubtitle').textContent = Lang.queryJS('team.subtitle')
+    // From the language file, may contain a link.
+    document.getElementById('teamFooter').innerHTML = Lang.queryJS('team.footer')
+
+    const grid = document.getElementById('teamGrid')
+    grid.innerHTML = ''
+    grid.setAttribute('loading', '')
+    $('#teamModal').fadeIn(200)
+
+    const members = await TeamFeed.load()
+    grid.removeAttribute('loading')
+    if(members.length === 0){
+        grid.textContent = Lang.queryJS('team.empty')
+        return
+    }
+    members.forEach(member => grid.appendChild(buildTeamCard(member)))
+}
+
+function hideTeamModal(){
+    $('#teamModal').fadeOut(200)
+}
+
+document.getElementById('teamMediaButton').onclick = (e) => {
+    e.currentTarget.blur()
+    showTeamModal()
+}
+// The dialog lives in app.ejs after this script, bind it once the page is parsed.
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('teamClose').onclick = hideTeamModal
+    document.getElementById('teamModal').onclick = (e) => {
+        if(e.target.id === 'teamModal'){
+            hideTeamModal()
+        }
+    }
+})
+document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && $('#teamModal').is(':visible')){
+        hideTeamModal()
+    }
+})
+
 // Bind launch button
 document.getElementById('launch_button').addEventListener('click', async e => {
     if(!ReleaseGate.isUnlocked()){

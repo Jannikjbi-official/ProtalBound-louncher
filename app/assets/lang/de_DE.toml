@@ -28,6 +28,7 @@ newsEyebrow = "NEUES AUS DEM PORTAL"
 newsTitle = "News"
 newsReadMore = "Weiterlesen"
 updateWhatsNew = "Was ist neu"
+teamTooltip = "Team"
 
 [ejs.login]
 loginCancelText = "Abbrechen"
@@ -242,6 +243,13 @@ allEyebrow = "LAUNCHER"
 allTitle = "Changelog"
 done = "Los geht's"
 empty = "Kein Changelog vorhanden."
+
+[js.team]
+eyebrow = "TEAM"
+title = "Die Leute hinter dem Portal"
+subtitle = "Entwicklung, Betrieb, Moderation und Support."
+footer = 'Fragen oder Ideen? Das Team ist auf unserem <a href="https://discord.gg/xvvq5WQPrm">Discord</a>.'
+empty = "Das Team konnte nicht geladen werden."
 
 [js.landing.discord]
 loading = "Spiel lädt.."
